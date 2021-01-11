@@ -1,6 +1,6 @@
 # Next.js first app
 
-This my app in Next.js. That project fetches a random API from [here](https://randomuser.me/api) and generates random users and displays it.
+This my app in Next.js. That project fetches a random user from [here](https://randomuser.me/api) and generates random users and displays it.
 
 ### Technologies
 - [Next.js v10.0.5](https://github.com/vercel/next.js)
