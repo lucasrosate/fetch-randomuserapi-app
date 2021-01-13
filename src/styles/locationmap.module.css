@@ -24,8 +24,8 @@
     display: grid;
 
     grid-template-rows: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 450px;
+    grid-template-columns: 1fr 1fr;
+    width: 340px;
 
     padding-left: 10px;
     margin-left: 10px;

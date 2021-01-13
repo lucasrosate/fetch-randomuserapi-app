@@ -1,12 +1,13 @@
 :root {
-  --background-color: rgb(141, 204, 241);
-  --page-color: rgb(226, 226, 226);
-    --primary-color: #dd4747;
+  --background-color: rgb(241, 141, 141);
+  --page-color: rgb(53, 51, 51);
   --primary-color: #dd4747;
-  --primary-color-darker: #c91616;
+  --primary-color: #e27c39;
+  --primary-color-darker: #d1661e;
   --text-color: rgb(21,21,21);
 
   --border-color-black: rgb(21,21,21, .2)
+  
 }
 
 

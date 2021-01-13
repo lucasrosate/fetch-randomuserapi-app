@@ -72,7 +72,7 @@ const RenderMapLocation: React.FC = () => {
             setMapLocation(newMap);
 
             let marker = new Marker({
-                color: "#dd4747"
+                color: "#e27c39"
             });
             marker.setLngLat([0,0])
             marker.addTo(newMap);
@@ -89,7 +89,7 @@ const RenderMapLocation: React.FC = () => {
             setLat(latNumber);
 
             // Prevent zoom decreases so much
-            setZoom(5);
+            setZoom(6);
 
             // Convert lat, lon from SI to LngLat unit that mapbox-gl accepts
             let convertedLngLat = mapboxgl.LngLat.convert([lngNumber, latNumber]);
@@ -116,7 +116,6 @@ const RenderMapLocation: React.FC = () => {
                     <div className={style.coordinateLabel}>
                         <div><b>Longitude:</b>  {parseFloat(lngRef.current).toFixed(2)}</div>
                         <div><b>Latitude:</b>  {parseFloat(latRef.current).toFixed(2)}</div>
-                        <div><b>Zoom:</b> {parseFloat(zoomRef.current).toFixed(2)}</div>
                     </div>
                 </div>
 

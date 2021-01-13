@@ -1,11 +1,12 @@
-# Next.js first app
+# Fetch Random User API
 
-This is my app in Next.js. That project fetches a random user from [here](https://randomuser.me/api) and generates random users and displays it.
+This is my first app in Next.js. That project fetches a random user from [here](https://randomuser.me/api) and generates random users and displays it.
 
 ### Technologies
 - [Next.js v10.0.5](https://github.com/vercel/next.js)
 - [Redux v4.0.5](https://github.com/reduxjs/redux)
 - [Axios v0.21.1](https://github.com/axios/axios)
+- [map-gl v2.0.1](https://www.npmjs.com/package/mapbox-gl)
 
 ### LocalSetup
 1. Clone this repo.
@@ -14,8 +15,8 @@ This is my app in Next.js. That project fetches a random user from [here](https:
 4. Enjoy it!
 
 ### Todo
-1. Make the view.
-2. Make the style
-3. Put a "change" user data option.
+1. Put a "change" user data option.
 
 
+### Image
+![Image1](https://i.imgur.com/UHfrl4c.png)

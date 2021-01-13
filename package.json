@@ -1,5 +1,5 @@
 {
-  "name": "nextjsapp-first",
+  "name": "fetch-random-user-api",
   "version": "0.1.0",
   "private": true,
   "proxy": "https://randomuser.me",
@@ -20,14 +20,14 @@
     "react-leaflet": "^3.0.5",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "mapbox-gl": "^2.0.1"
   },
   "devDependencies": {
     "@types/leaflet": "^1.5.19",
     "@types/mapbox-gl": "^2.0.2",
     "@types/node": "^14.14.20",
     "@types/react": "^17.0.0",
-    "mapbox-gl": "^2.0.1",
     "redux-devtools-extension": "^2.13.8",
     "typescript": "^4.1.3"
   }
