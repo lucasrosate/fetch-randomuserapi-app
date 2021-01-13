@@ -52,7 +52,8 @@ declare global {
             medium: string,
             thumbnail: string
         },
-        nat: string
+        nat: string,
+        status?: string
     };
 
     type UserAction = {
