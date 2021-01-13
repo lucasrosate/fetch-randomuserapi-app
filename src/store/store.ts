@@ -1,12 +1,16 @@
 import { applyMiddleware, createStore, Store } from 'redux';
-
-import { reducer } from '../store/reducers/reducer';
 import thunk from 'redux-thunk';
 
-const store: Store<UserState, UserAction> & {
-    dispatch: DispatchType
-  } = createStore(reducer, applyMiddleware(thunk))
+import { fetchDataMiddleware, reducer } from '../store/reducers/reducer';
 
-  export default store;
+// setting fetchDataMiddleware function as a Middleware for the user store
+const middlewareData = applyMiddleware(fetchDataMiddleware);
 
-  export const dispatch = store.dispatch;
+export const store: Store<UserState, UserAction> & {
+  dispatch: DispatchType
+// creating a store with the reducer created previously and passing the middleware config that allows run fetchDataMiddleware before anything
+} = createStore(reducer, middlewareData)
+
+export const dispatch = store.dispatch;
+
+export default store;

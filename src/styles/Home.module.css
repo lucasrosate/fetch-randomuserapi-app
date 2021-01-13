@@ -1,16 +1,122 @@
 .background {
     width: 100vw;
     height: 100vh;
-    background-color: rgb(141, 204, 241);
+    background-color: var(--background-color);
 }
 
 .container {
     width: 60vw;
     height: 100%;
-    background-color: rgb(211, 211, 211);
+    background-color: var(--page-color);
 
     margin-left: auto;
     margin-right: auto;
     box-shadow: rgb(59, 59, 59, .3) -5px 10px 3px,  rgb(59, 59, 59, .3) 5px 10px 3px;
 
+    display: flex;
+    align-items: center;
+
 }
+.contentContainer {
+    height: 700px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.infoUserContainer h3 {
+    height: 10px;
+    font-size: 1.6rem;
+
+    color: var(--primary-color);
+    font-weight: 500;
+
+}
+
+.profileContainer {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1.2fr 3fr;
+    grid-template-rows: 280px;
+}
+
+.profileImageContainer {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.profileImageContainer img {
+    border-radius: 50%;
+    width: 80%;
+    margin-left: 10px;
+    
+    border: 1px solid var(--border-color-black);
+}
+
+
+.descriptionContainer {
+    height: 220px;
+    display: grid;
+    align-items: center;
+
+    line-height: 30%;
+
+    grid-template-columns: 1.3fr 1.5fr;
+    grid-row: repeat(3,1fr);
+}
+
+.descriptionContainer div b {
+    color: var(--primary-color-darker);
+    font-weight: 500;
+}
+
+
+.mapLocationContainer {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+
+    justify-content: center;
+
+    width: 100%;
+    height: 350px;
+  
+  }
+  
+  .button {
+      background-color: var(--primary-color);
+      width: 120px;
+      height: 30px;
+
+      font-size: 0.9rem;
+
+      font-weight: 500;
+
+      font-family: "Rubik", sans-serif;
+      color: white;
+
+      border: none;
+
+      border-radius: 5px;
+
+      cursor: pointer;
+      
+      transition: transform 100ms, background-color 400ms;
+  }
+
+  .button:hover {
+      transform: translateY(-3px);
+      background-color: var(--primary-color-darker);
+  }
+
+  .button:focus {
+      outline: none;
+  }

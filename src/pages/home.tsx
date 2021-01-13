@@ -1,43 +1,28 @@
 import React, { useEffect, useState } from 'react';
-
-import { createUser } from '../store/actions/userActions';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { createUser } from '../store/actions/userActions';
+import store from '../store/store';
+import RenderMapLocation from '../components/common/rendermaplocation';
 import style from '../styles/home.module.css';
 
-import LocationMap from '../components/common/locationmap';
+
+
 
 
 const Home: React.FC = () => {
     const dispatch: DispatchType = useDispatch();
 
     const user: IUser = useSelector((state: UserState) => state.user);
-    var [lat, setLat] = useState<number>(0);
-    var [lng, setLng] = useState<number>(0);
-    var [zoom, setZoom] = useState<number>(2);
 
-    const updateLocation = (newValueLat: number, newValueLng: number, newValueZoom: number) => {
-        setLat(newValueLat);
-        setLng(newValueLng);
-        setZoom(newValueZoom);
+    const getApiData = React.useCallback(() => {
 
-        console.log(lat)
-    }
+        dispatch(createUser());
+    }, [createUser, user, dispatch]);
 
 
-    const loadUserApi = React.useCallback(() => {
-        createUser();
-        updateLocation(
-            parseFloat(user.location.coordinates.latitude) || 0,
-            parseFloat(user.location.coordinates.longitude) || 0,
-            2)
-    }, [lat, lng]);
+    useEffect(() => getApiData(), [])
 
-
-    useEffect(() => {
-        loadUserApi();
-
-    }, [loadUserApi])
 
 
     return (
@@ -46,22 +31,32 @@ const Home: React.FC = () => {
 
 
                 <div className={style.container}>
-                    <img src={user?.picture?.large} alt="" />
-                    {user?.login?.username}
-                    Name: {user?.name?.title} {user?.name?.first} {user?.name?.last}
-                    Gender: {user?.gender}
-                    Email: {user?.email}
-                    Data:{user?.registered?.date}
-                    {user?.phone}
-                    {user?.nat}
+                    <div className={style.contentContainer}>
+                        <div className={style.profileContainer}>
 
-                    <LocationMap
-                        lat={lat}
-                        lng={lng}
-                        zoom={zoom}
-                        updateLocation={updateLocation}
-                    />
-                    <button className={style.button} onClick={loadUserApi}>Reload</button>
+                            <div className={style.profileImageContainer}>
+                                <img src={user.picture.large} alt="profile image" />
+                            </div>
+                            <div className={style.infoUserContainer}>
+                                <h3>{user.login.username}</h3>
+                                <div className={style.descriptionContainer}>
+                                    <div><b>Full Name:</b> {user.name.first} {user.name.last}</div>
+                                    <div><b>Current live:</b> {user.location.city}, {user.location.country}</div>
+                                    <div><b>Country Origin:</b> {user.nat}</div>
+                                    <div><b>Email:</b> {user.email}</div>
+                                    <div><b>Tel:</b> {user.phone}</div>
+                                    <div><b>Gender:</b> {user.gender}</div>
+                                </div>
+                                <div><button className={style.button} onClick={getApiData}>Reload</button></div>
+                            </div>
+                        </div>
+
+                        <div className={style.mapLocationContainer}>
+                            <RenderMapLocation />
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </>

@@ -1,9 +1,25 @@
+:root {
+  --background-color: rgb(141, 204, 241);
+  --page-color: rgb(226, 226, 226);
+    --primary-color: #dd4747;
+  --primary-color: #dd4747;
+  --primary-color-darker: #c91616;
+  --text-color: rgb(21,21,21);
+
+  --border-color-black: rgb(21,21,21, .2)
+}
+
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: "Rubik", sans-serif;
   font-weight: 300;
+
+  color: var(--text-color);
+
+  overflow-x: hidden;
 }
 
 a {

@@ -16,8 +16,8 @@ export const initialState: UserState = {
             country: '',
             postcode: 0,
             coordinates: {
-                latitude: '',
-                longitude: ''
+                latitude: '0',
+                longitude: '0'
             },
             timezone: {
                 offset: '',
